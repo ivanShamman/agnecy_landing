@@ -36,7 +36,11 @@ body {
     text-rendering: optimizeSpeed;
     line-height: 1.5;
 }
-
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
 ul[class],
 ol[class] {

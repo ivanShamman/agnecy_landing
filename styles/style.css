@@ -1,12 +1,6 @@
 body{
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    color: #000000;
-}
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
 }
 a{
     text-decoration: none;
@@ -27,6 +21,9 @@ input:focus,textarea:focus{
     font-size: 18px;
     font-weight: 700;
 }
+.button:hover{
+    cursor: pointer;
+}
 
 /*Backgrounds*/
 .background{
@@ -45,13 +42,13 @@ input:focus,textarea:focus{
 }
 
 .horizontal-line{
-    border: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
 }
 .horizontal-line_red{
-    border: 1px solid #ff3b3b;
-    width: 130px;
+    border-bottom: 1px solid #ff3b3b;
+    max-width: 130px;
 }
-.horizontal-line_red_center{
+.horizontal-line_center{
     margin: 0 auto;
 }
 /*HEADER*/
@@ -127,11 +124,10 @@ header{
 .about-column h2{
     font-size: 42px;
     font-weight: 700;
-    color: #000000;
     margin-bottom: 50px;
 }
 .about-column > p{
-    margin-bottom: 35px;
+    margin-bottom: 60px;
 }
 .about-button{
     color: #ff2d2d;
@@ -157,7 +153,6 @@ header{
 .about-item h3{
     font-size: 24px;
     font-weight: 600;
-    color: #000000;
     margin-bottom: 15px;
 }
 
@@ -167,7 +162,6 @@ header{
 }
 .portfolio-title{
     text-align: center;
-    color: #000000;
     margin-bottom: 90px;
 }
 .portfolio-title h2{
@@ -190,7 +184,6 @@ header{
     font-size: 22px;
     font-weight: 600;
     text-decoration: none;
-    color: #000000;
     text-align: center;
     padding: 0 29px;
 }
@@ -218,7 +211,6 @@ header{
 .team-title h2{
     font-size: 42px;
     font-weight: 600;
-    color: #000000;
     margin-bottom: 40px;
 }
 .team-title p{
@@ -261,7 +253,6 @@ header{
     text-decoration: none;
     font-size: 18px;
     font-style: italic;
-    color: #000000;
     margin: 0 30px 0 0;
 }
 .team-card-row{
