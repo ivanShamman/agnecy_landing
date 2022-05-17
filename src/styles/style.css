@@ -62,80 +62,6 @@
     --width-bold:700;
 }
 
-
-/*RESET STYLES*/
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-ul[class],
-ol[class] {
-    padding: 0;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-    margin: 0;
-}
-
-body {
-    min-height: 100vh;
-    scroll-behavior: smooth;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-}
-ul,
-ul[class],
-ol[class] {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-a:not([class]) {
-    text-decoration-skip-ink: auto;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-article > * + * {
-    margin-top: 1em;
-}
-
-input,
-button,
-textarea,
-select {
-    font: inherit;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-
-
 /*--PAGE STYLES--*/
 body{
     font-family: var(--global-font);
@@ -515,9 +441,11 @@ header{
     justify-content: center;
     gap: 25px;
 }
-
-.subscribe__email-form input{
+.subscribe__email-form label{
     width: 40%;
+}
+.subscribe__email-form  input{
+    width: 100%;
     height: 80px;
     border: 0;
     color: #2c2c2c;
@@ -583,7 +511,9 @@ header{
 .send__form{
     width: 60%;
 }
-
+.send__form label{
+    width: 50%;
+}
 .send__input{
     display: flex;
     justify-content: space-between;
@@ -713,6 +643,14 @@ footer .row{
         gap: 85px;
     }
 
+    .gallery-block{
+        height: 245px;
+    }
+
+    .team__left-column {
+        width: 30%;
+    }
+
     .contact__background {
         padding: 100px 200px 42px 90px;
     }
@@ -748,6 +686,12 @@ footer .row{
         flex-wrap: wrap;
         gap: 60px;
     }
+    .about__column{
+        text-align: center;
+    }
+    .about__column img{
+        margin: 0 auto;
+    }
 
     .portfolio__title {
         margin-bottom: 55px;
@@ -762,24 +706,19 @@ footer .row{
         gap: normal;
     }
 
+    .gallery-block{
+        height: 190px;
+    }
     .team__row{
+        flex-wrap: wrap;
         gap:30px
     }
 
     .team__left-column{
         width: 45%;
     }
-
-    .team__person-photo-block{
-        height: 100%;
-    }
-
-    .team__people-card .disabled-on-tablet{
-        display: none;
-    }
-
-    .team__card-block{
-        width: 50%;
+    .team__right-column{
+        width: 100%;
     }
 
     .subscribe{
@@ -789,11 +728,9 @@ footer .row{
     .subscribe__email-form{
         justify-content: space-between;
     }
-
-    .subscribe__email-form input{
+    .subscribe__email-form label{
         width: 60%;
     }
-
     .send__row{
         flex-wrap: wrap;
     }
@@ -802,6 +739,9 @@ footer .row{
     }
 
     .send__form {
+        width: 100%;
+    }
+    .send__form label{
         width: 100%;
     }
 
@@ -818,17 +758,13 @@ footer .row{
     .disabled-on-desktop{
         display: block;
     }
+    .gallery-block{
+        height: 160px;
+    }
+
 
     .team__card{
         margin-bottom: 25px;
-    }
-
-    .team__card-row{
-        display: none;
-    }
-
-    .team__people-card.disabled-on-desktop .row{
-        gap: 25px;
     }
 
     footer .row{
@@ -844,8 +780,7 @@ footer .row{
 }
 @media (max-width: 610px) {
     .navigation{
-        width: 100%;
-        height: 75px;
+       display: none;
     }
 
     .navigation ul{
@@ -853,16 +788,20 @@ footer .row{
     }
 
     .gallery-block{
-        width: 49%;
-        height: 316px;
+        width: calc(50% - 10px);
+        height: 260px
     }
-
-    .disabled-on-tablet{
-        display: none;
+    .team__left-column {
+        width: 60%;
     }
-
     .team__right-column {
-        width: 50%;
+        width: 100%;
+    }
+    .team__card-row{
+        flex-wrap: wrap;
+    }
+    .team__card-block{
+        width: calc(50% - 10px);
     }
 
     .team__person-description ul {
@@ -877,9 +816,6 @@ footer .row{
         gap: 20px;
     }
 
-    .team__people-card .row .team__card-block{
-        width: 45%;
-    }
 
     .subscribe__title h2{
         font-size: 32px;
@@ -922,7 +858,7 @@ footer .row{
         justify-content: center;
     }
 
-    .subscribe__email-form input {
+    .subscribe__email-form label{
         width: 100%;
     }
 }
@@ -973,12 +909,9 @@ footer .row{
 
     .gallery-block {
         width: 100%;
-        height: 512px;
+        height: 400px
     }
 
-    .disabled-on-mobile{
-        display: none;
-    }
 
     .team__row {
         flex-wrap: wrap;
@@ -987,12 +920,22 @@ footer .row{
 
     .team__left-column {
         width: 100%;
-        height: 512px;
+        height: 618px;
         margin-bottom: 25px;
+    }
+    .team__person-photo-block{
+        height: 618px;
     }
 
     .team__right-column {
         width: 100%;
+    }
+    .team__card-block {
+        width: 100%;
+        height: 325px;
+    }
+    .team__card-name{
+        margin-top: 285px;
     }
 
     .team__person-description ul {
